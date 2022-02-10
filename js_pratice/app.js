@@ -1,8 +1,24 @@
-const h1 = document.querySelector(".title h1");
-//title 변수에 문서의 title이라는 id를 가진 Element를 가져 올 수 있게 해준다.
+const h1 = document.querySelector(".text h1");
 
-function handleTitleClick() {
-    h1.classList.toggle("clicked");
-}
-
-h1.addEventListener("click", handleTitleClick);
+const superEventHandler = {
+    MouseEnter:function() {
+        h1.innerText = "The Mouse is here!";
+        h1.style.color = "turquoise"
+    },
+    MouseLeave:function() {
+        h1.innerText = "The Mouse is gone!";
+        h1.style.color = "skyblue";
+    },
+    WindowResize:function() {
+        h1.innerText = "You just resized!"
+        h1.style.color = "purple";
+    },
+    ContextMenu:function() {
+        h1.innerText = "That was a right click!";
+        h1.style.color = "orangered";
+    }
+};
+h1.addEventListener("mouseenter",superEventHandler.MouseEnter);
+h1.addEventListener("mouseleave",superEventHandler.MouseLeave);
+window.addEventListener("resize",superEventHandler.WindowResize);
+window.addEventListener("contextmenu",superEventHandler.ContextMenu);
