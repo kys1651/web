@@ -1,24 +1,26 @@
-const h1 = document.querySelector(".text h1");
+const loginForm = document.querySelector("#login-form");
+const loginInput = loginForm.querySelector("input");
+const greeting = document.querySelector("#greeting");
 
-const superEventHandler = {
-    MouseEnter:function() {
-        h1.innerText = "The Mouse is here!";
-        h1.style.color = "turquoise"
-    },
-    MouseLeave:function() {
-        h1.innerText = "The Mouse is gone!";
-        h1.style.color = "skyblue";
-    },
-    WindowResize:function() {
-        h1.innerText = "You just resized!"
-        h1.style.color = "purple";
-    },
-    ContextMenu:function() {
-        h1.innerText = "That was a right click!";
-        h1.style.color = "orangered";
-    }
-};
-h1.addEventListener("mouseenter",superEventHandler.MouseEnter);
-h1.addEventListener("mouseleave",superEventHandler.MouseLeave);
-window.addEventListener("resize",superEventHandler.WindowResize);
-window.addEventListener("contextmenu",superEventHandler.ContextMenu);
+function LoginSubmit(event) {
+    event.preventDefault();
+    const username = loginInput.value; 
+    loginForm.classList.add("hidden");
+    localStorage.setItem("username",username);
+    paintGreeting(username);
+}
+
+function paintGreeting(username) {
+    greeting.classList.remove("hidden");
+    greeting.innerText = "Hello! " + username;
+}
+
+const savedUsername = localStorage.getItem("username");
+
+if(savedUsername === null){
+    //show the form
+    loginForm.classList.remove("hidden");
+    loginForm.addEventListener("submit",LoginSubmit);
+}else {
+    paintGreeting(savedUsername);
+}
