@@ -8,6 +8,7 @@
     font-size: 40px;
     border-radius: 5em; padding: 0.5em; background: #6aafe6;
     color:aliceblue;
+    font-family: "paybooc-Light", sans-serif;
 }
 
 #year {
@@ -23,7 +24,7 @@
 
 .button {
     border: none;
-    padding: 15px 70px;
+    padding: 15px 100px;
     border-radius: 15px;
     font-family: "paybooc-Light", sans-serif;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
@@ -33,4 +34,6 @@
     color: white;
     margin: auto;
     display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
