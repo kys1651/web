@@ -1,4 +1,4 @@
-.class_title h2{
+.class_title {
     /* border: 2.5px solid rgba(0,0,0,0.3);
     padding: 10px 0px;
     margin: 0px;
@@ -15,7 +15,15 @@
 }
 
 .class_form label{
-    padding: 5px 0px;
+    padding: 10px 0px;
     border-top: 1px solid rgba(0,0,0,0.3);
 }
 
+.major input {
+    margin-left: 5px;
+}
+
+.result_col div{
+    padding: 10px 0px;
+    border-top: 1px solid rgba(0,0,0,0.3);
+}

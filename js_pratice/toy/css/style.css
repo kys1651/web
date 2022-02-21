@@ -1,5 +1,6 @@
 @import "reset.css";
 @import "class.css";
+@import "display.css";
 
 #title{
     text-align: center;
@@ -11,16 +12,21 @@
     font-family: "paybooc-Light", sans-serif;
 }
 
-#year {
+#check_list {
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#year label {
+#check_list label {
     margin-right: 5px;
 }
+
+#check_list form{
+    margin-left: 10px;
+}
+
 
 .button {
     border: none;
@@ -36,4 +42,16 @@
     display: block;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.body {
+    margin: 0px 5px;
+}
+
+.body label{
+    margin: 0px 10px;
+}
+
+.noClass {
+    color: #FF5050;
 }
